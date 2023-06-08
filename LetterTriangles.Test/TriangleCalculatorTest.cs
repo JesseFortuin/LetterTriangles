@@ -1,3 +1,5 @@
+using LetterTriangles.BL;
+
 namespace LetterTriangles.Test
 {
     public class TriangleCalculatorTest
