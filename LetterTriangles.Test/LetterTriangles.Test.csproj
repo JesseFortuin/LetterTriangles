@@ -22,4 +22,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LetterTriangles.BL\LetterTriangles.BL.csproj" />
+  </ItemGroup>
+
 </Project>
