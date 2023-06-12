@@ -9,8 +9,8 @@ namespace LetterTriangles.Test
         [InlineData("triangle", "d")]
         [InlineData("youhavechosentotranslatethiskata", "a")]
         [InlineData("b", "b")]
-        [InlineData("yes ", "b")]
-        [InlineData("hours ", "y")]
+        [InlineData("yes", "b")]
+        [InlineData("hours", "y")]
         [InlineData("circlecipher", "z")]
         public void TriangleTests(string input, string expected)
         {

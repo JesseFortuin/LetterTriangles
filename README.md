@@ -48,3 +48,50 @@ codewars -> rsibxsk -> kbkzqd -> mmkqu -> zxbl -> xzn -> xn -> l
 Note, if the sum is bigger than 26, then start over
 
 Input will always be lowercase letters. Random tests contains strings up to 30 letters.
+
+-------------------------------------------------------
+Solutions
+
+    string str = "";
+    while  (row.Length > 1) {
+      for (int i = 0; i < row.Length - 1; i++) {
+        int ascii = (row[i] - 96) + (row[i+1] - 96);
+        if (ascii > 26) { ascii -= 26; }
+        str += (char)(ascii + 96);
+      }
+      row = str;
+      str = "";
+    }
+    return row;
+
+------------
+
+        string current = row;
+        StringBuilder sb = new();
+        while(current.Length > 1) {
+            for(int i = 1; i < current.Length; i++) {
+                int sum = (current[i - 1] - 96) + (current[i] - 96);
+                if(sum > 26) sum -= 26;
+                sb.Append((char)(sum + 96));
+            }
+            current = sb.ToString();
+            sb.Clear();
+        }
+        return current;
+
+--------------
+            if (s.Length == 1)
+                return s;
+            char[] chars = new char[s.Length - 1];
+            for (int i = 0; i < s.Length - 1; i++)
+                chars[i] = nextColor(s[i], s[i + 1]);
+            return recursive(new string(chars));
+        }
+        private static char nextColor(char c1, char c2)
+        {
+            int c = ((int)c1 + (int)c2 - 192) % 26 + 96;
+            if(c== 96) c = 122;
+            return (char)c;
+
+
+
